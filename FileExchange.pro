@@ -13,23 +13,17 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     fileserver.cpp \
-    threadedfileserver.cpp \
     fileexchangeitem.cpp \
     fileexchangeitemdelegate.cpp \
     fileexchangetablemodel.cpp \
-    uploadstablemodel.cpp \
-    uploaditem.cpp \
     fileoperationsockets.cpp
 
 HEADERS  += mainwindow.h \
     fileserver.h \
-    threadedfileserver.h \
     utildefines.h \
     fileexchangeitem.h \
     fileexchangeitemdelegate.h \
     fileexchangetablemodel.h \
-    uploadstablemodel.h \
-    uploaditem.h \
     fileoperationsockets.h
 
 FORMS    += mainwindow.ui

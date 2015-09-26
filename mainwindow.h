@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QFileSystemModel>
 #include "fileserver.h"
-#include "uploadstablemodel.h"
+#include "fileexchangetablemodel.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,13 +22,15 @@ private slots:
     void on_downloadFolderBrowseButton_clicked();
     void on_downloadFolderLineEdit_editingFinished();
     void on_fileSystemTree_doubleClicked(const QModelIndex &index);
+    void checkAcceptConnections();
 
 private:
+
     Ui::MainWindow *ui;
     QFileSystemModel*       fileSystemModel;
     FileServer*             fileServer;
-    UploadsTableModel*      uploadsTableModel;
-    FileExchangeTableModel* downloadsTableModel;
+    FileExchange::UploadsTableModel*    uploadsTableModel;
+    FileExchange::DownloadsTableModel*  downloadsTableModel;
 };
 
 #endif // MAINWINDOW_H

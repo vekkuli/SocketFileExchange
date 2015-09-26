@@ -13,6 +13,9 @@ public:
 
     void setDownloadFolder(const QString &value);
 
+signals:
+    void signalIncomingConnection(qintptr socketDescriptor, QString downloadFolder);
+
 protected:
     void incomingConnection(qintptr socketDescriptor) Q_DECL_OVERRIDE;
 

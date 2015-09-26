@@ -37,7 +37,7 @@
           <item>
            <widget class="QLineEdit" name="downloadFolderLineEdit">
             <property name="text">
-             <string>D:/User Data/Desktop/New Folder</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -51,7 +51,27 @@
          </layout>
         </item>
         <item>
-         <widget class="QTableView" name="downloadsTable"/>
+         <widget class="QCheckBox" name="acceptConnectionsCheckBox">
+          <property name="text">
+           <string>Accept Connections</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="downloadsTable">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -72,17 +92,27 @@
           <item>
            <widget class="QLineEdit" name="addressLineEdit">
             <property name="text">
-             <string>localhost</string>
+             <string/>
             </property>
            </widget>
           </item>
          </layout>
         </item>
         <item>
-         <widget class="QTreeView" name="fileSystemTree"/>
+         <widget class="QTreeView" name="fileSystemTree">
+          <property name="editTriggers">
+           <set>QAbstractItemView::DoubleClicked</set>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QTableView" name="uploadsTable">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
           <property name="selectionBehavior">
            <enum>QAbstractItemView::SelectRows</enum>
           </property>

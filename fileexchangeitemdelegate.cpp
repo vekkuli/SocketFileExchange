@@ -2,10 +2,7 @@
 #include <QPainter>
 #include <QApplication>
 
-FileExchangeItemDelegate::FileExchangeItemDelegate(QObject *parent) : QStyledItemDelegate(parent)
-{
-
-}
+FileExchangeItemDelegate::FileExchangeItemDelegate(QObject *parent) : QStyledItemDelegate(parent) {}
 
 void FileExchangeItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {

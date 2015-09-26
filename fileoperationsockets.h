@@ -19,13 +19,16 @@ public:
 
 public slots:
     void reportError(QAbstractSocket::SocketError socketError);
+    virtual void onStartOperation() = 0;
 
 private slots:   
     void checkUpdate();
     void checkSpeed();
 
 signals:
-    void signalInfo(QString, QString, QString);
+    void signalAddress(QString);
+    void signalFileName(QString);
+    void signalFileSize(QString);
     void signalProgress(int);
     void signalStatus(QString);
     void signalSpeed(QString);
@@ -54,7 +57,7 @@ public:
     ClientSocket(QString _address, QString _filePath);
 
 public slots:
-    void initTransfer();
+    void onStartOperation();
     void startTransferring();
     void onBytesWritten();
 
@@ -67,19 +70,16 @@ class ServerSocket : public Socket
     Q_OBJECT
 
 public:
-    ServerSocket(int socketDescriptor, QString downloadFolder);
+    ServerSocket(qintptr socketDescriptor, QString downloadFolder);
 
 public slots:
-    void init();
+    void onStartOperation();
     void onReadyRead();
-
-signals:
-    void done();
 
 private:
     void cleanUp();
 
-    int socketDescriptor;
+    qintptr socketDescriptor;
     QString downloadFolder;
     bool dataRead;
     qint64 fileNameLength;
