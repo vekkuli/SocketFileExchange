@@ -26,4 +26,9 @@ HEADERS  += mainwindow.h \
     fileexchangetablemodel.h \
     fileoperationsockets.h
 
+
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    .gitignore \
+    LICENSE.md
